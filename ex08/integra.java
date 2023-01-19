@@ -8,6 +8,8 @@ public class integra {
 
 class Trapezoidal{
     void solve(){
+	    int h=1;
+	    float result;
 
     }
 }
