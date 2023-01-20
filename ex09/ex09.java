@@ -25,23 +25,46 @@ public class ex09 {
     void Euler(double h) {
 	double x=0;
 	double y=ya;
+	double y_last=ya;
 	double i=0;
-	while(i<=1){
-	    ya=ya+h*f(x,y);
+	while(i<1){
+	    y_last=y_last+h*f(x,y);
 	    i=i+h;
 	    x=x+h;
-	    y=ya;
+	    y=y_last;
 	}
-	double error= ya - Math.exp(0.5*x*x);
+	double error= y_last - Math.exp(0.5*x*x);
 
 	System.out.println("Euler:  h=" + h +
 			   " x=" + x +
-			   " y=" + ya +
+			   " y=" + y_last +
 			   " Error="+ error);
 	    
     }
 
     void RungeKutta(double h) {
+	    double x=0;
+	    double y=ya;
+	    double y_last=ya;
+	    double i=0;
+	    double k1, k2, k3, k4;
+	    while(i<1){
+		   k1=h*f(x, y);
+		    k2=h*f(x+h/2, y+k1/2);
+		    k3=h*f(x+h/2, y+k2/2);
+		    k4=h*f(x+h, y+k3);
+		    y_last=y_last+(k1 + 2*k2 + 2*k3 + k4)/6;
+		    i=i+h;
+		    x=x+h;
+		    y=y_last;
+	    }
+	    double error= y_last - Math.exp(0.5*x*x);
+
+	System.out.println("Euler:  h=" + h +
+			   " x=" + x +
+			   " y=" + y_last +
+			   " Error="+ error);
     }
+	    
 
 }
