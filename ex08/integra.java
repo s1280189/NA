@@ -19,9 +19,9 @@ class Trapezoidal{
 	    }
 	    
 	    System.out.println("I= " + result);
-	    double error=result-M_PI/4;
+	    double error=result-Math.PI/4;
 	    System.out.println("Error = " +error);
-	    double relative=error/(M_PI/4);
+	    double relative=error/(Math.PI/4);
 	    System.out.println("R= "+ relative);
 
     }
@@ -37,9 +37,9 @@ class Simpson{
 	    }
 	    
 	    System.out.println("I= "+result);
-	    double error=result-(M_PI/4);
+	    double error=result-(Math.PI/4);
 	    System.out.println("Error= "+error);
-	    double relative=error/(M_PI/4);
+	    double relative=error/(Math.PI/4);
 	    System.out.println("R= "+relative);
 				 
 
