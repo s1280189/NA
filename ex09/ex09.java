@@ -2,7 +2,7 @@
  *  Numerical Analysis. Exercise 09
  *  ODE
  */
-public class Ex09 {
+public class ex09 {
 
     public static void main(String[] args) {
 
@@ -10,7 +10,7 @@ public class Ex09 {
 	System.out.println("dy/dx = xy, a=0, b=1, y(a) = 1");
 	System.out.println();
 
-	Ex09 e = new Ex09();
+	ex09 e = new ex09();
 	e.Euler(0.1);
 	e.RungeKutta(0.1);
 	e.Euler(0.01);
@@ -23,6 +23,22 @@ public class Ex09 {
     static double a=0, b=1, ya = 1;
 
     void Euler(double h) {
+	double x=0;
+	double y=ya;
+	double i=0;
+	while(i<=1){
+	    ya=ya+h*f(x,y);
+	    i=i+h;
+	    x=x+h;
+	    y=ya;
+	}
+	double error= ya - Math.exp(0.5*x*x);
+
+	System.out.println("Euler:  h=" + h +
+			   " x=" + x +
+			   " y=" + ya +
+			   " Error="+ error);
+	    
     }
 
     void RungeKutta(double h) {
