@@ -38,12 +38,22 @@ public class ex10 {
 	    }
 	}
 
-
+	boolean flag = true;
+	while(flag) {
+	    flag = false;
 	for(int i=1;i<n;i++){
 	    for(int j=1;j<n;j++){
 		u2[i][j]=(u[i+1][j]+u2[i-1][j]+u[i][j+1]+u2[i][j-1]+2*h*h)/4;
-		itr++;
 	    }
+	}
+
+	for(int i=1;i<n+1;i++){
+	    for(int j=0;j<n+1;j++){
+		if(Math.abs((u2[i][j]-u[i][j])/u2[i][j])>1.0e-10){
+		    flag = true;
+		}
+	    }
+	}
 	}
 
 	System.out.println("Liebman method");
