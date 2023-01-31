@@ -56,7 +56,7 @@ public class ex12 {
 	return (double)r/(double)m;
     }
 
-    void MonteCarlo1D(int n) {
+    void MonteCarlo1D(int n) { //Complete
 
 	double d = 0.0;
 
@@ -71,7 +71,7 @@ public class ex12 {
 	System.out.println("Num: " + n + " Result = " + d + " Error = " + (d - exact()));
     }
 
-    void MonteCarlo2D(int n) {
+    void MonteCarlo2D(int n) { //Miss
 
 	int m = 0;
 
@@ -87,7 +87,7 @@ public class ex12 {
 	System.out.println("Num: " + n + " Result = " + d + " Error = " + (d - exact2()));
     }
 
-    void MonteCarlo3D(int n) {
+    void MonteCarlo3D(int n) { //Miss
 
 	int m = 0;
 
